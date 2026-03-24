@@ -1,0 +1,78 @@
+
+body.pagina-login {
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+    display: flex;
+    flex-direction:column;
+    font-family: $tipografia;
+    background: url('/images/bgImage.png') no-repeat center center/cover;
+    background-attachment: fixed;
+
+    .contenedor-login {
+        flex:1;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        
+    }
+
+    .caja-login {
+        width: 100%;
+        max-width: 420px;
+        padding:40px;
+        background: transparent;
+        background-color: transparent;
+        backdrop-filter: blur(12px);
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        text-align: center;
+
+        .img-login img {
+            max-width: 280px;
+            height: auto;
+            margin-bottom: 30px;
+        }
+    }
+
+    .form-login {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        input {
+            padding: 14px 18px;
+            background-color: $colorBlanco;
+            border: none;
+            border-radius: 10px;
+            font-size:1rem;
+            outline: none;
+            transition: all 0.3s ease;
+
+            &:focus {
+                box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+            }
+        }
+
+        .btn-acceder {
+            margin-top: 10px;
+            padding: 15px;
+            background-color: $colorPrincipal;
+            border: none;
+            border-radius: 12px;
+            color: $colorBlanco;
+            font-size: $parrafo;
+            font-family:inherit;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s ease;
+
+            &:hover {
+                background-color: lighten($colorPrincipal, 10%);
+            }
+        }
+    }
+
+
+}

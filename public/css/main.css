@@ -287,6 +287,73 @@ main {
     width: 100%;
   }
 }
+body.pagina-login {
+  margin: 0px;
+  padding: 0px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: url("/images/bgImage.png") no-repeat center center/cover;
+  background-attachment: fixed;
+}
+body.pagina-login .contenedor-login {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+body.pagina-login .caja-login {
+  width: 100%;
+  max-width: 420px;
+  padding: 40px;
+  background: transparent;
+  background-color: transparent;
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+body.pagina-login .caja-login .img-login img {
+  max-width: 280px;
+  height: auto;
+  margin-bottom: 30px;
+}
+body.pagina-login .form-login {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+body.pagina-login .form-login input {
+  padding: 14px 18px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+body.pagina-login .form-login input:focus {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+body.pagina-login .form-login .btn-acceder {
+  margin-top: 10px;
+  padding: 15px;
+  background-color: #004b9b;
+  border: none;
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+body.pagina-login .form-login .btn-acceder:hover {
+  background-color: rgb(0, 99.6774193548, 206);
+}
+
 body {
   margin: 0px;
 }/*# sourceMappingURL=main.css.map */
