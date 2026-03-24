@@ -1,0 +1,161 @@
+// Centrar el contenedor principal en la pantalla
+main {
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+}
+
+#curso-card-principal {
+    // Formato
+    display: flex;
+    flex-direction: column;
+    gap: 40px;  // Espaciado entre secciones
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+    // Color
+    background-color: $colorSecundario;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); // Sombra para dar profundidad
+    // Tipografía
+    font-family: $tipografia;
+
+    section {
+        text-align: left; 
+        
+        h2 {
+            color: $colorPrincipal;
+            border-left: 5px solid $colorPrincipal; 
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+// Vídeos responsivos
+#curso-videos {
+    div {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        padding-top: 56.25%; // Proporción 16:9
+        margin-bottom: 30px;
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px; // Videos con bordes redondeados
+        }
+    }
+}
+
+// 4. Mejora de la infografía
+#curso-infografia {
+    figure {
+        margin: 0;
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease; // Efecto visual al pasar el ratón
+
+            &:hover {
+                transform: scale(1.02);
+            }
+        }
+        figcaption {
+            margin-top: 10px;
+            font-style: italic;
+            font-size: 0.9rem;
+            text-align: center;
+            color: #666;
+        }
+    }
+}
+
+/* Estilo para la imagen original (la que se hace clic) */
+.img-clickable {
+    cursor: pointer; // Indica que se puede hacer clic
+    transition: 0.3s;
+    &:hover {
+        opacity: 0.7; // Un efecto visual sutil al pasar el ratón
+    }
+}
+
+/* 3. Estilos para el contenedor del Modal (el fondo negro) */
+.modal {
+    display: none;    /* Oculto por defecto */
+    position: fixed;   /* Fijo sobre la pantalla */
+    z-index: 1000;    /* Muy por encima de todo */
+    padding-top: 100px; /* Espacio arriba */
+    left: 0;
+    top: 0;
+    width: 100%;      /* Ancho completo */
+    height: 100%;     /* Alto completo */
+    overflow: auto;   /* Permite scroll si la imagen es muy grande */
+    background-color: rgb(0,0,0); /* Color de fondo negro */
+    background-color: rgba(0,0,0,0.9); /* Negro con opacidad */
+
+    /* 4. Estilo para la imagen ampliada */
+    &-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 1200px; // Evita que se vea pixelada en PC grandes
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(255,255,255,0.2); // Un brillo blanco suave
+    }
+
+    /* 5. Estilo para la leyenda (Figcaption) */
+    #caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 1200px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 150px;
+    }
+
+    /* 6. Animación de zoom (hace que aparezca suavemente) */
+    &-content, #caption {
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+
+    @keyframes zoom {
+        from {transform:scale(0)}
+        to {transform:scale(1)}
+    }
+
+    /* 7. El botón de cerrar (la X) */
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+        cursor: pointer;
+
+        &:hover, &:focus {
+            color: $colorPrincipal; // Usa tu color de marca
+            text-decoration: none;
+        }
+    }
+}
+
+/* 8. Responsividad para móviles (hace la imagen más grande en pantallas pequeñas) */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
