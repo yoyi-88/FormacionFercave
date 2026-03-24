@@ -2,39 +2,72 @@
     display: flex;
     justify-content: space-between; 
     align-items: center;           
-    padding: 1rem 5%;             
+    padding: 0.75rem 5%;             
     background-color: $colorPrincipal;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
     font-family: $tipografia;
-    font-size: $h2;
+    // font-size: $h1;
 
-    .logo a {
-        display: flex;
+    .logo {
+        display:flex;
         align-items: center;
-        text-decoration: none;
-        color: $colorSecundario;
-        font-weight: 700;
-        letter-spacing: 1px;
-        gap: 10px; 
-
-        i {
-            font-size: 1.5rem;
+        
+        a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
             color: $colorSecundario;
+            font-weight: 700;
+            letter-spacing: 1px;
+            gap: 12px; 
+
+            .logo-img {
+                display:block;
+                height: 50px;
+                width:50px;
+                max-width: 150px;
+                object-fit: contain;
+                border-radius: 25px;
+            }
+
+            span {
+                font-size: 1.4rem;
+            }
+
+            &:hover {
+                transform: scale(1.05);
+            }
         }
     }
 
     .usuarios {
-        .btn-login {
-            text-decoration: none;
-            color: $colorSecundario;
-            font-weight: 600;
+        .perfil-usuario {
             display: flex;
             align-items: center;
-            gap: 8px;
-            transition: color 0.3s ease;
+            gap: 12px;
+            color: $colorSecundario;
+            font-weight: 600;
+            font-size: $h3;
 
-            &:hover {
-                color: $colorAcento;
+            i.fa-user-circle {
+                font-size: 2.2rem;
+                opacity: 0.8;
+            }
+
+            .btn-salir {
+                background: none;
+                border: none;
+                font-size: 1.5rem;
+                color: #d9534f; 
+                cursor: pointer;
+                margin-left: 5px;
+                padding: 5px;
+                transition: transform 0.2s ease;
+
+                &:hover {
+                    transform: scale(1.1);
+                    color: darken(#d9534f, 10%);
+                }
             }
         }
     }

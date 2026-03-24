@@ -1,0 +1,45 @@
+.contenedor-cursos {
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 1rem;
+    // padding: ;
+    // max-width: 1400px;
+    margin: 0 auto;
+    font-family: $tipografia;
+    margin: 10px;
+    color: $colorTexto;
+    font-size: $parrafo;
+}
+
+.curso-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.curso-card {
+    background-color: $colorSecundario;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3 ease;
+    display:flex;
+    flex-direction: column;
+    margin-top: 10px;
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .header-card {
+        position:relative;
+        height: 180px;
+
+        .imagen-card {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
