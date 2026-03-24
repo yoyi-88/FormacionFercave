@@ -1,0 +1,23 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    background-color: $colorPrincipal;
+    color: $colorBlanco;
+    text-align: center;
+    align-items: center;
+
+    p {
+        font-size: $parrafo;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+
+        a {
+            font-size: $small;
+        }
+    }
+
+
+}

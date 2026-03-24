@@ -1,0 +1,19 @@
+// --- Variables de Color ---
+$colorPrincipal: #004b9b;           // Azul Corporativo (Confianza)
+$colorSecundario: #f0f4f8;          // Gris azulado muy claro (Para fondos de sección)
+$colorAcento: #00d1b2;              // Turquesa/Verde (Éxito y progreso)
+$colorBoton: #0066cc;               // Un azul un poco más brillante para incitar al clic
+$colorFondo: #f9f9f9;               // Casi blanco (Evita el puro #fff para no cansar la vista)
+
+$colorTexto: #333333;               // Gris oscuro para lectura
+$colorBlanco: #ffffff;              // Blanco puro para tarjetas y headers
+
+// --- Variables de Tipografía (Escala Modular) ---
+$tipografia: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+// Tamaños (recomendados para legibilidad en escritorio)
+$h1: 36px;  // Título de bienvenida/curso
+$h2: 28px;  // Títulos de módulos
+$h3: 20px; // Subtítulos o tarjetas
+$parrafo: 16px; // Tamaño estándar de lectura
+$small: 14px; // Metadatos (duración del vídeo, fecha)
