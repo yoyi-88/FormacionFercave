@@ -4,4 +4,8 @@
 @import 'components/_forms';
 @import 'layout/_footer';
 @import 'layout/_header';
-@import 'layout/_curso'
+@import 'layout/_curso';
+
+body {
+    margin: 0px;
+}
