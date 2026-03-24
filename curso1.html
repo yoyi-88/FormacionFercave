@@ -36,33 +36,44 @@
             </section>
 
             <section id="curso-videos">
-                <h2>Vídeo breve</h2>
-                <div>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/ID_DEL_VIDEO_2"
-                        title="Descripción del segundo video para accesibilidad" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
+                <h2>Nuestros Vídeos</h2>
 
-                    <h2>Vídeo explicativo</h2>
-                    <div>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/ID_DEL_VIDEO_2"
-                            title="Descripción del segundo video para accesibilidad" frameborder="0"
+                <article class="video-container">
+                    <h3>Vídeo Breve</h3>
+                    <div class="iframe-ratio-wrapper">
+                        <iframe src="https://www.youtube.com/embed/ID_DEL_VIDEO_1?controls=1&modestbranding=1&rel=0"
+                            title="Título descriptivo para accesibilidad" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen>
                         </iframe>
                     </div>
+                </article>
+
+                <article class="video-container">
+                    <h3>Vídeo Explicativo</h3>
+                    <div class="iframe-ratio-wrapper">
+                        <iframe src="https://www.youtube.com/embed/ID_DEL_VIDEO_2?controls=1&modestbranding=1&rel=0"
+                            title="Título descriptivo para accesibilidad" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </article>
             </section>
 
             <section id="curso-infografia">
                 <h2>Análisis Visual</h2>
                 <figure>
-                    <img src="ruta-a-tu-infografia.jpg"
+                    <img src="images/logoCompleto.png" class="img-clickable"
                         alt="Texto que describe detalladamente lo que muestra la infografía">
                     <figcaption>Título: Resumen de datos estadísticos 2026</figcaption>
                 </figure>
             </section>
-            </section>
+            <div id="image-modal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="img01">
+                <div id="caption"></div>
+            </div>
         </div>
 
     </main>
@@ -75,6 +86,48 @@
             <a href="https://fercaveasesores.es/politica-de-privacidad/">Política de privacidad</a>
         </nav>
     </footer>
+
+    <script>
+        // Obtener el modal
+        var modal = document.getElementById("image-modal");
+
+        // Obtener la imagen y su caption dentro del modal
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+
+        // Obtener todas las imágenes con la clase 'img-clickable' (para que funcione con varias)
+        var images = document.getElementsByClassName("img-clickable");
+
+        // Recorrer todas las imágenes y añadir el evento 'click'
+        for (var i = 0; i < images.length; i++) {
+            images[i].onclick = function () {
+                modal.style.display = "block"; // Mostrar el modal
+                modalImg.src = this.src;       // Poner la src de la imagen clicada en el modal
+                // Buscar el figcaption que está justo después de la imagen (semántica)
+                var figCaption = this.nextElementSibling;
+                if (figCaption && figCaption.tagName === 'FIGCAPTION') {
+                    captionText.innerHTML = figCaption.innerHTML;
+                } else {
+                    captionText.innerHTML = this.alt; // Si no hay figcaption, usa el alt
+                }
+            }
+        }
+
+        // Obtener el elemento <span> que cierra el modal (la 'X')
+        var span = document.getElementsByClassName("close")[0];
+
+        // Cuando el usuario hace clic en la 'X', se cierra el modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // EXTRA: También cerrar el modal si se pulsa la tecla 'Escape'
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && modal.style.display === "block") {
+                modal.style.display = "none";
+            }
+        });
+    </script>
 </body>
 
 </html>

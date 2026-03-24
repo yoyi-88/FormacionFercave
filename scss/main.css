@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .footer {
   display: flex;
   flex-direction: column;
@@ -65,6 +66,154 @@
   color: #00d1b2;
 }
 
-body {
-  margin: 0px;
+main {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+#curso-card-principal {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 90%;
+  max-width: 1000px;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px;
+  background-color: #f0f4f8;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+#curso-card-principal section {
+  text-align: left;
+}
+#curso-card-principal section h2 {
+  color: #004b9b;
+  border-left: 5px solid #004b9b;
+  padding-left: 15px;
+  margin-bottom: 20px;
+}
+
+#curso-videos div {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+  margin-bottom: 30px;
+}
+#curso-videos div iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+#curso-infografia figure {
+  margin: 0;
+}
+#curso-infografia figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+#curso-infografia figure img:hover {
+  transform: scale(1.02);
+}
+#curso-infografia figure figcaption {
+  margin-top: 10px;
+  font-style: italic;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #666;
+}
+
+/* Estilo para la imagen original (la que se hace clic) */
+.img-clickable {
+  cursor: pointer;
+  transition: 0.3s;
+}
+.img-clickable:hover {
+  opacity: 0.7;
+}
+
+/* 3. Estilos para el contenedor del Modal (el fondo negro) */
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed; /* Fijo sobre la pantalla */
+  z-index: 1000; /* Muy por encima de todo */
+  padding-top: 100px; /* Espacio arriba */
+  left: 0;
+  top: 0;
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Alto completo */
+  overflow: auto; /* Permite scroll si la imagen es muy grande */
+  background-color: rgb(0, 0, 0); /* Color de fondo negro */
+  background-color: rgba(0, 0, 0, 0.9); /* Negro con opacidad */
+  /* 4. Estilo para la imagen ampliada */
+}
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 1200px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+.modal {
+  /* 5. Estilo para la leyenda (Figcaption) */
+}
+.modal #caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 1200px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+.modal {
+  /* 6. Animación de zoom (hace que aparezca suavemente) */
+}
+.modal-content, .modal #caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.modal {
+  /* 7. El botón de cerrar (la X) */
+}
+.modal .close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.modal .close:hover, .modal .close:focus {
+  color: #004b9b;
+  text-decoration: none;
+}
+
+/* 8. Responsividad para móviles (hace la imagen más grande en pantallas pequeñas) */
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 100%;
+  }
 }/*# sourceMappingURL=main.css.map */
