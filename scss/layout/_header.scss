@@ -1,17 +1,17 @@
 .header-principal {
     display: flex;
-    justify-content: space-between; 
-    align-items: center;           
-    padding: 0.75rem 5%;             
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 5%;
     background-color: $colorPrincipal;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     font-family: $tipografia;
     // font-size: $h1;
 
     .logo {
-        display:flex;
+        display: flex;
         align-items: center;
-        
+
         a {
             display: flex;
             align-items: center;
@@ -19,15 +19,19 @@
             color: $colorSecundario;
             font-weight: 700;
             letter-spacing: 1px;
-            gap: 12px; 
+            gap: 12px;
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: transform; // Optimiza el rendimiento de la animación
 
             .logo-img {
-                display:block;
+                display: block;
                 height: 50px;
-                width:50px;
+                width: 50px;
                 max-width: 150px;
                 object-fit: contain;
                 border-radius: 25px;
+                transition: filter 0.3s ease;
+
             }
 
             span {
@@ -35,7 +39,15 @@
             }
 
             &:hover {
-                transform: scale(1.05);
+                transform: scale(1.03);
+
+                .logo-img {
+                    filter: brightness(1.1); // Un toque de luz extra en lugar de solo tamaño
+                }
+            }
+
+            &:active {
+                transform: scale(0.98); // Efecto de "click" realista
             }
         }
     }
@@ -58,7 +70,7 @@
                 background: none;
                 border: none;
                 font-size: 1.5rem;
-                color: #d9534f; 
+                color: #d9534f;
                 cursor: pointer;
                 margin-left: 5px;
                 padding: 5px;
