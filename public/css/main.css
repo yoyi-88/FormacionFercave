@@ -356,4 +356,12 @@ body.pagina-login .form-login .btn-acceder:hover {
 
 body {
   margin: 0px;
+}
+
+body.privado {
+  display: none;
+}
+
+body.auth-ready {
+  display: block;
 }/*# sourceMappingURL=main.css.map */
