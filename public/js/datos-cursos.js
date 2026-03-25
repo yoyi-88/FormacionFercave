@@ -76,8 +76,8 @@ const MIS_CURSOS = {
 
         Hacer bien este proceso desde el inicio evita problemas y permite empezar la actividad con seguridad jurídica y fiscal.
         `,
-        video1: "",
-        video2: "",
+        video1: "https://youtu.be/dWxUlo-dnoM",
+        video2: "https://youtu.be/vVRgheg2-gE",
         infografia: "/public/images/cursos/infografias/6_alta.webp"
     },
     "gastos": {
@@ -90,8 +90,8 @@ const MIS_CURSOS = {
 
         Una correcta gestión de los gastos deducibles puede suponer un ahorro importante en impuestos, siempre dentro de la legalidad.
         `,
-        video1: "",
-        video2: "",
+        video1: "https://youtu.be/1bva4VBBiJs",
+        video2: "https://youtu.be/GCQvqHIbLHA",
         infografia: "/public/images/cursos/infografias/7_gastos.webp"
     },
     "facturacion": {
@@ -104,8 +104,8 @@ const MIS_CURSOS = {
         
         Adaptarse a tiempo permitirá evitar problemas y aprovechar las ventajas de la digitalización, como el ahorro de tiempo y la reducción de errores.
         `,
-        video1: "",
-        video2: "",
+        video1: "https://youtu.be/frJSzrvtKFM",
+        video2: "https://youtu.be/qU2xHon3jKk",
         infografia: "/public/images/cursos/infografias/8_facturacion.webp"
     },
     "contratar": {
@@ -118,8 +118,8 @@ const MIS_CURSOS = {
         
         Planificar bien este paso es fundamental para evitar costes inesperados y problemas legales.
         `,
-        video1: "",
-        video2: "",
+        video1: "https://youtu.be/xeWjOwqixrc",
+        video2: "https://youtu.be/XtRVsMVr1-4",
         infografia: "/public/images/cursos/infografias/9_contratar.webp"
     },
     "nominas": {
@@ -132,8 +132,8 @@ const MIS_CURSOS = {
 
         Comprender las nóminas ayuda tanto a empresarios como a trabajadores a tener claridad sobre sus derechos y obligaciones.
         `,
-        video1: "",
-        video2: "",
+        video1: "https://youtu.be/Lp2v7SeH_do",
+        video2: "https://youtu.be/ZGDSGEWaAgA",
         infografia: "/public/images/cursos/infografias/10_nominas.webp"
     },
     "calendario-fiscal": {
