@@ -1,6 +1,7 @@
 // Importamos solo lo que necesitamos de los servidores de Google
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBnh5Q--KLV8r-th5KTGcJM7GpPmv4lbys",
@@ -17,3 +18,7 @@ const app = initializeApp(firebaseConfig);
 
 // Exportamos la "llave" de autenticación para usarla en otros archivos
 export const auth = getAuth(app);
+
+// Exportamos la base de datos de Firestore
+export const db = getFirestore(app);
+
