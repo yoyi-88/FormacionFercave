@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // 3. RELLENAR LOS DATOS EN EL HTML
 
     // Título de la pestaña del navegador
-    document.getElementById('page-title').innerText = datosCurso.titulo + " - Fercave Asesores";
+    document.getElementById('page-title').innerText = datosCurso.titulo + " - Fercave Asesores S.L.";
 
     // Título principal dentro de la página
     document.getElementById('curso-titulo-principal').innerText = datosCurso.titulo;
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // --- Control de Vídeos ---
 
     // Parámetros recomendados para YouTube (seguridad básica y modest branding)
-    const ytParams = "?controls=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3";
+    const ytParams = "?controls=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1";
 
     // Vídeo 1
     const iframeVideo1 = document.getElementById('curso-video1');

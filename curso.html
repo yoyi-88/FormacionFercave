@@ -4,10 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">Cargando Curso... - Formación Fercave Asesores</title>
+    <link rel="icon" type="image/png" href="images/logoFercave.png">
+    <link rel="apple-touch-icon" href="images/logoFercave.png">
+    <link rel="icon" sizes="192x192" href="images/logoFercave.png">
+    <title id="page-title">Cargando Curso... - Formación Fercave Asesores S.L.</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="public/css/main.css">
     <script type="module" src="js/auth-guard.js" defer></script>
+    <script src="js/btn-subir.js" defer></script>
 </head>
 
 <body>
@@ -31,6 +35,8 @@
     </header>
 
     <main>
+        
+
         <div id="curso-error" style="display:none; text-align:center; padding: 50px;">
             <h2>¡Ups! Curso no encontrado.</h2>
             <p>El curso solicitado no existe o no está disponible.</p>
@@ -38,6 +44,12 @@
         </div>
 
         <div id="curso-card-principal" style="display:none;">
+            <div class="nav-controles">
+                <a href="index.html" class="btn-volver">
+                    <i class="fas fa-arrow-left"></i> Volver a los cursos
+                </a>
+            </div>
+
             <section id="curso-descripcion">
                 <h1 id="curso-titulo-principal" style="font-size: 2rem; margin-bottom: 10px;"></h1>
                 <h2>Sobre el curso</h2>
@@ -85,6 +97,10 @@
                 <div id="caption"></div>
             </div>
         </div>
+
+        <button id="btn-subir" class="btn-subir" title="Ir arriba">
+            <i class="fas fa-chevron-up"></i>
+        </button>
     </main>
 
     <footer class="footer">
@@ -101,6 +117,7 @@
     <script src="js/modal.js"></script>
     
     <script src="js/carga-curso.js"></script>
+
 </body>
 
 </html>
