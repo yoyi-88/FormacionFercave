@@ -52,6 +52,8 @@ main {
             height: 100%;
             border-radius: 10px; // Videos con bordes redondeados
         }
+
+        
     }
 }
 
@@ -158,4 +160,10 @@ main {
     .modal-content {
         width: 100%;
     }
+}
+
+#curso-desc-texto {
+    white-space: pre-line;
+    font-size: $parrafo + 5px;
+    font-family: $tipografia;
 }

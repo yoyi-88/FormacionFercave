@@ -1,6 +1,6 @@
 // Esperar a que el DOM esté completamente cargado
-document.addEventListener("DOMContentLoaded", function() {
-    
+document.addEventListener("DOMContentLoaded", function () {
+
     // 1. OBTENER EL ID DEL CURSO DESDE LA URL
     // Buscamos el parámetro 'id' en la URL (ej: curso.html?id=veriFactu)
     const urlParams = new URLSearchParams(window.location.search);
@@ -24,28 +24,38 @@ document.addEventListener("DOMContentLoaded", function() {
     const datosCurso = MIS_CURSOS[cursoId];
 
     // 3. RELLENAR LOS DATOS EN EL HTML
-    
+
     // Título de la pestaña del navegador
     document.getElementById('page-title').innerText = datosCurso.titulo + " - Fercave Asesores";
-    
+
     // Título principal dentro de la página
     document.getElementById('curso-titulo-principal').innerText = datosCurso.titulo;
-    
+
     // Descripción del curso (usamos innerHTML por si quieres poner <br> o negritas en el texto)
     document.getElementById('curso-desc-texto').innerHTML = datosCurso.descripcion || "Descripción próximamente...";
 
     // --- Control de Vídeos ---
-    
+
     // Parámetros recomendados para YouTube (seguridad básica y modest branding)
-    const ytParams = "?controls=1&modestbranding=1&rel=0";
+    const ytParams = "?controls=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3";
 
     // Vídeo 1
     const iframeVideo1 = document.getElementById('curso-video1');
     const containerVideo1 = document.getElementById('container-video1');
-    
+
     if (datosCurso.video1) {
-        // Si hay URL, la ponemos en el iframe sumando los parámetros
-        iframeVideo1.src = datosCurso.video1 + ytParams;
+        // Dentro de tu función de carga, antes de asignar el .src al iframe:
+        let urlVideo = datosCurso.video1;
+
+        if (urlVideo.includes("youtu.be/")) {
+            // Si pegaste el enlace corto, lo transformamos a embed
+            urlVideo = urlVideo.replace("youtu.be/", "www.youtube.com/embed/");
+        } else if (urlVideo.includes("watch?v=")) {
+            // Si pegaste el enlace largo, lo transformamos a embed
+            urlVideo = urlVideo.replace("watch?v=", "embed/");
+        }
+
+        iframeVideo1.src = urlVideo + ytParams;
         containerVideo1.style.display = 'block'; // Asegurarnos de que sea visible
     } else {
         // Si no hay URL, ocultamos el contenedor del video entero
@@ -55,9 +65,21 @@ document.addEventListener("DOMContentLoaded", function() {
     // Vídeo 2
     const iframeVideo2 = document.getElementById('curso-video2');
     const containerVideo2 = document.getElementById('container-video2');
-    
+
     if (datosCurso.video2) {
-        iframeVideo2.src = datosCurso.video2 + ytParams;
+        // Dentro de tu función de carga, antes de asignar el .src al iframe:
+        let urlVideo = datosCurso.video2;
+
+        if (urlVideo.includes("youtu.be/")) {
+            // Si pegaste el enlace corto, lo transformamos a embed
+            urlVideo = urlVideo.replace("youtu.be/", "www.youtube.com/embed/");
+        } else if (urlVideo.includes("watch?v=")) {
+            // Si pegaste el enlace largo, lo transformamos a embed
+            urlVideo = urlVideo.replace("watch?v=", "embed/");
+        }
+
+        iframeVideo2.src = urlVideo + ytParams;
+
         containerVideo2.style.display = 'block';
     } else {
         containerVideo2.style.display = 'none';
@@ -71,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (datosCurso.infografia) {
         imgInfografia.src = datosCurso.infografia;
         // Ponemos el título del curso como texto alternativo para accesibilidad
-        imgInfografia.alt = "Infografía sobre: " + datosCurso.titulo; 
+        imgInfografia.alt = "Infografía sobre: " + datosCurso.titulo;
         captionInfografia.innerText = "Análisis visual: " + datosCurso.titulo;
         sectionInfografia.style.display = 'block';
     } else {
