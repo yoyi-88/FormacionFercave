@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Cargando Curso... - Formación Fercave Asesores</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="public/css/main.css">
+</head>
+
+<body>
+    <header class="header-principal">
+        <div class="logo">
+            <a href="/">
+                <img src="/images/logoFercave.png" alt="Logo Fercave" class="logo-img">
+                <span>FORMACIÓN FERCAVE</span>
+            </a>
+        </div>
+
+        <div class="usuarios">
+            <div class="perfil-usuario">
+                <i class="fas fa-user-circle"></i>
+                <span id="nombre-empleado">Usuario</span> 
+                <button class="btn-salir" title="Cerrar Sesión">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="curso-error" style="display:none; text-align:center; padding: 50px;">
+            <h2>¡Ups! Curso no encontrado.</h2>
+            <p>El curso solicitado no existe o no está disponible.</p>
+            <a href="/" style="color: blue; text-decoration: underline;">Volver al inicio</a>
+        </div>
+
+        <div id="curso-card-principal" style="display:none;">
+            <section id="curso-descripcion">
+                <h1 id="curso-titulo-principal" style="font-size: 2rem; margin-bottom: 10px;"></h1>
+                <h2>Sobre el curso</h2>
+                <p id="curso-desc-texto"></p>
+            </section>
+
+            <section id="curso-videos">
+                <h2>Nuestros Vídeos</h2>
+
+                <article id="container-video1" class="video-container">
+                    <h3>Vídeo Breve</h3>
+                    <div class="iframe-ratio-wrapper">
+                        <iframe id="curso-video1" src=""
+                            title="Vídeo breve del curso" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </article>
+
+                <article id="container-video2" class="video-container">
+                    <h3>Vídeo Explicativo</h3>
+                    <div class="iframe-ratio-wrapper">
+                        <iframe id="curso-video2" src=""
+                            title="Vídeo explicativo del curso" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </article>
+            </section>
+
+            <section id="curso-infografia">
+                <h2>Infografía</h2>
+                <figure>
+                    <img id="curso-img" src="" class="img-clickable"
+                        alt="Infografía del curso">
+                    <figcaption id="curso-img-caption"></figcaption>
+                </figure>
+            </section>
+            
+            <div id="image-modal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="img01">
+                <div id="caption"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Fercave Asesores</p>
+        <nav>
+            <a href="https://fercaveasesores.com/contacto/">Contacto</a>
+            <a href="https://fercaveasesores.com/">Web Principal</a>
+            <a href="https://fercaveasesores.es/politica-de-privacidad/">Política de privacidad</a>
+        </nav>
+    </footer>
+
+    <script src="js/datos-cursos.js"></script>
+    
+    <script src="js/modal.js"></script>
+    
+    <script src="js/carga-curso.js"></script>
+</body>
+
+</html>
