@@ -6,7 +6,7 @@ body.pagina-login {
     display: flex;
     flex-direction:column;
     font-family: $tipografia;
-    background: url('/images/bgImage.png') no-repeat center center/cover;
+    background: url('/public/images/bgImage.png') no-repeat center center/cover;
     background-attachment: fixed;
 
     .contenedor-login {
