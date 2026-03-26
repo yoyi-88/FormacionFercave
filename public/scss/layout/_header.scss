@@ -83,4 +83,50 @@
             }
         }
     }
+
+    @media (max-width: 680px) {
+        flex-direction: column; // Apilamos logo arriba y usuario abajo
+        gap: 15px;
+        padding: 1rem 5%;
+        text-align: center;
+
+        .logo {
+            a {
+                flex-direction: column; // Imagen arriba, texto abajo
+                gap: 5px;
+
+                .logo-img {
+                    height: 45px;
+                    width: 45px;
+                }
+
+                span {
+                    font-size: 1.1rem; // Reducimos un poco el texto
+                    letter-spacing: 0.5px;
+                }
+            }
+        }
+
+        .usuarios {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1); // Separador sutil
+            padding-top: 10px;
+
+            .perfil-usuario {
+                font-size: 0.9rem; // Nombre más pequeño para que no rompa
+                gap: 8px;
+
+                i.fa-user-circle {
+                    font-size: 1.6rem;
+                }
+
+                .btn-salir {
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+
 }

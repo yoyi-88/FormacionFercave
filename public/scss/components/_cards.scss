@@ -6,7 +6,7 @@
     // max-width: 1400px;
     margin: 0 auto;
     font-family: $tipografia;
-    margin: 10px;
+    margin: 20px;
     color: $colorTexto;
     font-size: $parrafo;
 }
@@ -41,5 +41,11 @@
             height: 100%;
             object-fit: cover;
         }
+    }
+}
+
+@media (max-width: 450px) {
+    .contenedor-cursos {
+        margin: 0 30px;
     }
 }

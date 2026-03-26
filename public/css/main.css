@@ -46,7 +46,7 @@
   gap: 1rem;
   margin: 0 auto;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin: 10px;
+  margin: 20px;
   color: #333333;
   font-size: 16px;
 }
@@ -82,6 +82,11 @@
      object-fit: cover;
 }
 
+@media (max-width: 450px) {
+  .contenedor-cursos {
+    margin: 0 30px;
+  }
+}
 .footer {
   display: flex;
   flex-direction: column;
@@ -184,6 +189,43 @@
 .header-principal .usuarios .perfil-usuario .btn-salir:hover {
   transform: scale(1.1);
   color: rgb(201.4953271028, 48.0841121495, 43.5046728972);
+}
+@media (max-width: 680px) {
+  .header-principal {
+    flex-direction: column;
+    gap: 15px;
+    padding: 1rem 5%;
+    text-align: center;
+  }
+  .header-principal .logo a {
+    flex-direction: column;
+    gap: 5px;
+  }
+  .header-principal .logo a .logo-img {
+    height: 45px;
+    width: 45px;
+  }
+  .header-principal .logo a span {
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+  }
+  .header-principal .usuarios {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 10px;
+  }
+  .header-principal .usuarios .perfil-usuario {
+    font-size: 0.9rem;
+    gap: 8px;
+  }
+  .header-principal .usuarios .perfil-usuario i.fa-user-circle {
+    font-size: 1.6rem;
+  }
+  .header-principal .usuarios .perfil-usuario .btn-salir {
+    font-size: 1.3rem;
+  }
 }
 
 main {
@@ -350,7 +392,7 @@ body.pagina-login {
   display: flex;
   flex-direction: column;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: url("/public/images/bgImage.png") no-repeat center center/cover;
+  background: url("../../images/bgImage.png") no-repeat center center/cover;
   background-attachment: fixed;
 }
 body.pagina-login .contenedor-login {

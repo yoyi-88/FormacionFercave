@@ -5,6 +5,9 @@ import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-
 // 1. Verificación de sesión
 onAuthStateChanged(auth, async (user) => {
     if (user) {
+
+        // Si hay usuario, mostramos el body
+        document.body.style.display = "block";
         
         // USUARIO LOGUEADO: 
         // Pintamos su email en el header que preparamos antes
