@@ -10,7 +10,7 @@ const MIS_CURSOS = {
         ,
         video1: "https://youtu.be/pqEIH_OG7fE",
         video2: "https://youtu.be/Iv2BkdQBpCE",
-        infografia: "/public/images/cursos/infografias/1_verifactu.webp"
+        infografia: "public/images/cursos/infografias/1_verifactu.webp"
     },
     "facturas": {
         titulo: "Cómo emitir facturas correctamente (y evitar sanciones)",
@@ -24,7 +24,7 @@ const MIS_CURSOS = {
         ,
         video1: "https://youtu.be/hr-HOf3kijU",
         video2: "https://youtu.be/CsylVwQd2fA",
-        infografia: "/public/images/cursos/infografias/2_factura.webp"
+        infografia: "public/images/cursos/infografias/2_factura.webp"
     },
     "iva": {
         titulo: "IVA para autónomos sin complicaciones",
@@ -38,7 +38,7 @@ const MIS_CURSOS = {
         ,
         video1: "https://youtu.be/qshPkG4Wyq8",
         video2: "https://youtu.be/_-RpjS6mXPs",
-        infografia: "/public/images/cursos/infografias/3_iva.webp"
+        infografia: "public/images/cursos/infografias/3_iva.webp"
     },
     "irpf": {
         titulo: "IRPF para autónomos: lo básico que debes saber",
@@ -52,7 +52,7 @@ const MIS_CURSOS = {
         `,
         video1: "https://youtu.be/KjSGwvxaIxY",
         video2: "https://youtu.be/ir_8brdRl3E",
-        infografia: "/public/images/cursos/infografias/4_irpf.webp"
+        infografia: "public/images/cursos/infografias/4_irpf.webp"
     },
     "control-ingresos": {
         titulo: "Control de ingresos y gastos (sin ser contable)",
@@ -64,7 +64,7 @@ const MIS_CURSOS = {
         `,
         video1: "https://youtu.be/rSqA3qXs7p4",
         video2: "https://youtu.be/BIICTM7eCUg",
-        infografia: "/public/images/cursos/infografias/5_contable.webp"
+        infografia: "public/images/cursos/infografias/5_contable.webp"
     },
     "alta": {
         titulo: "Alta de autónomo paso a paso",
@@ -78,7 +78,7 @@ const MIS_CURSOS = {
         `,
         video1: "https://youtu.be/dWxUlo-dnoM",
         video2: "https://youtu.be/vVRgheg2-gE",
-        infografia: "/public/images/cursos/infografias/6_alta.webp"
+        infografia: "public/images/cursos/infografias/6_alta.webp"
     },
     "gastos": {
         titulo: "Gastos deducibles: qué puedes y qué no puedes deducir",
@@ -92,7 +92,7 @@ const MIS_CURSOS = {
         `,
         video1: "https://youtu.be/1bva4VBBiJs",
         video2: "https://youtu.be/GCQvqHIbLHA",
-        infografia: "/public/images/cursos/infografias/7_gastos.webp"
+        infografia: "public/images/cursos/infografias/7_gastos.webp"
     },
     "facturacion": {
         titulo: "Facturación electrónica y nuevas obligaciones",
@@ -106,7 +106,7 @@ const MIS_CURSOS = {
         `,
         video1: "https://youtu.be/frJSzrvtKFM",
         video2: "https://youtu.be/qU2xHon3jKk",
-        infografia: "/public/images/cursos/infografias/8_facturacion.webp"
+        infografia: "public/images/cursos/infografias/8_facturacion.webp"
     },
     "contratar": {
         titulo: "Contratar a tu primer trabajador",
@@ -120,7 +120,7 @@ const MIS_CURSOS = {
         `,
         video1: "https://youtu.be/xeWjOwqixrc",
         video2: "https://youtu.be/XtRVsMVr1-4",
-        infografia: "/public/images/cursos/infografias/9_contratar.webp"
+        infografia: "public/images/cursos/infografias/9_contratar.webp"
     },
     "nominas": {
         titulo: "Nóminas para no expertos",
@@ -134,7 +134,7 @@ const MIS_CURSOS = {
         `,
         video1: "https://youtu.be/Lp2v7SeH_do",
         video2: "https://youtu.be/ZGDSGEWaAgA",
-        infografia: "/public/images/cursos/infografias/10_nominas.webp"
+        infografia: "public/images/cursos/infografias/10_nominas.webp"
     },
     "calendario-fiscal": {
         titulo: "Calendario fiscal explicado fácil",
@@ -148,7 +148,7 @@ const MIS_CURSOS = {
         `,
         video1: "",
         video2: "",
-        infografia: "/public/images/cursos/infografias/11_calendario-fiscal.webp"
+        infografia: "public/images/cursos/infografias/11_calendario-fiscal.webp"
     },
     "hacienda": {
         titulo: "Inspecciones de Hacienda: cómo actuar",
@@ -162,7 +162,7 @@ const MIS_CURSOS = {
         `,
         video1: "",
         video2: "",
-        infografia: "/public/images/cursos/infografias/12_inspeccion.webp"
+        infografia: "public/images/cursos/infografias/12_inspeccion.webp"
     },
     "impuestos": {
         titulo: "Cómo pagar menos impuestos legalmente",
@@ -176,7 +176,7 @@ const MIS_CURSOS = {
         `,
         video1: "",
         video2: "",
-        infografia: "/public/images/cursos/infografias/13_planificacion.webp"
+        infografia: "public/images/cursos/infografias/13_planificacion.webp"
     },
     "digitalizacion": {
         titulo: "Digitalización del autónomo",
@@ -190,7 +190,7 @@ const MIS_CURSOS = {
         `,
         video1: "",
         video2: "",
-        infografia: "/public/images/cursos/infografias/14_digitalizacion.webp"
+        infografia: "public/images/cursos/infografias/14_digitalizacion.webp"
     },
     
     
