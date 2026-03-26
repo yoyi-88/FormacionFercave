@@ -59,7 +59,9 @@ const MIS_CURSOS = {
         descripcion: `Llevar un control de ingresos y gastos no significa hacer contabilidad compleja, sino tener una visión clara de cómo va tu negocio. Muchos autónomos trabajan “a ojo”, lo que dificulta tomar decisiones y detectar problemas a tiempo.
 
         Un sistema sencillo, como una hoja de Excel o un software básico, puede ser suficiente si está bien organizado. Lo importante es registrar todos los ingresos y gastos de forma ordenada y periódica.
+
         También es fundamental guardar todas las facturas y justificantes durante el tiempo legal requerido, ya que Hacienda puede solicitarlos en cualquier momento. La digitalización facilita mucho esta tarea.
+        
         Además, controlar tus números te permitirá saber si realmente estás ganando dinero, qué gastos puedes reducir y cómo mejorar la rentabilidad de tu actividad.
         `,
         video1: "https://youtu.be/rSqA3qXs7p4",
