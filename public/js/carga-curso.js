@@ -1,109 +1,95 @@
-// Esperar a que el DOM esté completamente cargado
-document.addEventListener("DOMContentLoaded", function () {
+import { db } from './firebase-config.js';
 
-    // 1. OBTENER EL ID DEL CURSO DESDE LA URL
-    // Buscamos el parámetro 'id' en la URL (ej: curso.html?id=veriFactu)
+import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+
+document.addEventListener("DOMContentLoaded", async function () {
     const urlParams = new URLSearchParams(window.location.search);
     const cursoId = urlParams.get('id');
 
-    // Referencias a los contenedores principales
     const mainContent = document.getElementById('curso-card-principal');
     const errorContent = document.getElementById('curso-error');
 
-    // 2. VERIFICAR SI EL CURSO EXISTE
-    // Si no hay ID en la URL o el ID no existe en nuestra "base de datos" MIS_CURSOS
-    if (!cursoId || !MIS_CURSOS[cursoId]) {
-        // Mostrar mensaje de error y ocultar el contenido
-        if (mainContent) mainContent.style.display = 'none';
-        if (errorContent) errorContent.style.display = 'block';
-        document.getElementById('page-title').innerText = "Curso no encontrado - Fercave Asesores";
-        return; // Detener la ejecución del script aquí
+    // Verificar si hay ID en la URL
+    if (!cursoId) {
+        mostrarError(mainContent, errorContent);
+        return;
     }
 
-    // Si el curso existe, obtenemos sus datos
-    const datosCurso = MIS_CURSOS[cursoId];
+    try {
+        // Obtener datos desde Firestore
+        const docRef = doc(db, "cursos", cursoId);
+        const docSnap = await getDoc(docRef);
 
-    // 3. RELLENAR LOS DATOS EN EL HTML
+        if (docSnap.exists()) {
+            const datosCurso = docSnap.data();
+            rellenarHTML(datosCurso, mainContent);
+        } else {
+            mostrarError(mainContent, errorContent);
+        }
+    } catch (e) {
+        console.error("Error crítico al obtener el curso:", e);
+        mostrarError(mainContent, errorContent);
+    }
+});
 
-    // Título de la pestaña del navegador
-    document.getElementById('page-title').innerText = datosCurso.titulo + " - Fercave Asesores S.L.";
+// Funciones de apoyo
 
-    // Título principal dentro de la página
+function rellenarHTML(datosCurso, mainContent) {
+    // Títulos
+    document.getElementById('page-title').innerText = `${datosCurso.titulo} - Fercave Asesores S.L.`;
     document.getElementById('curso-titulo-principal').innerText = datosCurso.titulo;
-
-    // Descripción del curso (usamos innerHTML por si quieres poner <br> o negritas en el texto)
     document.getElementById('curso-desc-texto').innerHTML = datosCurso.descripcion || "Descripción próximamente...";
 
-    // --- Control de Vídeos ---
-
-    // Parámetros recomendados para YouTube (seguridad básica y modest branding)
+    // Configuración de YouTube
     const ytParams = "?controls=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1";
 
-    // Vídeo 1
+    // Procesar Video 1
     const iframeVideo1 = document.getElementById('curso-video1');
     const containerVideo1 = document.getElementById('container-video1');
+    procesarVideo(datosCurso.video1, iframeVideo1, containerVideo1, ytParams);
 
-    if (datosCurso.video1) {
-        // Dentro de tu función de carga, antes de asignar el .src al iframe:
-        let urlVideo = datosCurso.video1;
-
-        if (urlVideo.includes("youtu.be/")) {
-            // Si pegaste el enlace corto, lo transformamos a embed
-            urlVideo = urlVideo.replace("youtu.be/", "www.youtube.com/embed/");
-        } else if (urlVideo.includes("watch?v=")) {
-            // Si pegaste el enlace largo, lo transformamos a embed
-            urlVideo = urlVideo.replace("watch?v=", "embed/");
-        }
-
-        iframeVideo1.src = urlVideo + ytParams;
-        containerVideo1.style.display = 'block'; // Asegurarnos de que sea visible
-    } else {
-        // Si no hay URL, ocultamos el contenedor del video entero
-        containerVideo1.style.display = 'none';
-    }
-
-    // Vídeo 2
+    // Procesar Video 2
     const iframeVideo2 = document.getElementById('curso-video2');
     const containerVideo2 = document.getElementById('container-video2');
+    procesarVideo(datosCurso.video2, iframeVideo2, containerVideo2, ytParams);
 
-    if (datosCurso.video2) {
-        // Dentro de tu función de carga, antes de asignar el .src al iframe:
-        let urlVideo = datosCurso.video2;
-
-        if (urlVideo.includes("youtu.be/")) {
-            // Si pegaste el enlace corto, lo transformamos a embed
-            urlVideo = urlVideo.replace("youtu.be/", "www.youtube.com/embed/");
-        } else if (urlVideo.includes("watch?v=")) {
-            // Si pegaste el enlace largo, lo transformamos a embed
-            urlVideo = urlVideo.replace("watch?v=", "embed/");
-        }
-
-        iframeVideo2.src = urlVideo + ytParams;
-
-        containerVideo2.style.display = 'block';
-    } else {
-        containerVideo2.style.display = 'none';
-    }
-
-    // --- Control de Infografía ---
+    // Infografía
     const imgInfografia = document.getElementById('curso-img');
     const captionInfografia = document.getElementById('curso-img-caption');
     const sectionInfografia = document.getElementById('curso-infografia');
 
     if (datosCurso.infografia) {
         imgInfografia.src = datosCurso.infografia;
-        // Ponemos el título del curso como texto alternativo para accesibilidad
-        imgInfografia.alt = "Infografía sobre: " + datosCurso.titulo;
-        captionInfografia.innerText = "Análisis visual: " + datosCurso.titulo;
+        imgInfografia.alt = `Infografía: ${datosCurso.titulo}`;
+        captionInfografia.innerText = `Análisis visual: ${datosCurso.titulo}`;
         sectionInfografia.style.display = 'block';
     } else {
-        // Si no hay infografía, ocultamos la sección entera
         sectionInfografia.style.display = 'none';
     }
 
-    // 4. MOSTRAR EL CONTENIDO FINAL
-    // Una vez todo está cargado, ocultamos el posible error y mostramos la card
-    if (errorContent) errorContent.style.display = 'none';
-    if (mainContent) mainContent.style.display = 'flex'; // Usamos flex porque tu SCSS usa flex
+    // Mostrar el contenido final
+    if (mainContent) mainContent.style.display = 'flex';
+}
 
-});
+// Función auxiliar para no repetir la lógica de YouTube dos veces
+function procesarVideo(urlOriginal, iframe, contenedor, params) {
+    if (urlOriginal) {
+        let urlEmbed = urlOriginal;
+        if (urlEmbed.includes("youtu.be/")) {
+            urlEmbed = urlEmbed.replace("youtu.be/", "www.youtube.com/embed/");
+        } else if (urlEmbed.includes("watch?v=")) {
+            urlEmbed = urlEmbed.replace("watch?v=", "embed/");
+        }
+        iframe.src = urlEmbed + params;
+        contenedor.style.display = 'block';
+    } else {
+        contenedor.style.display = 'none';
+    }
+}
+
+function mostrarError(mainContent, errorContent) {
+    if (mainContent) mainContent.style.display = 'none';
+    if (errorContent) errorContent.style.display = 'block';
+    document.getElementById('page-title').innerText = "Curso no encontrado - Fercave Asesores";
+}
