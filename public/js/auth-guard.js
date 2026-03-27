@@ -60,3 +60,31 @@ if (btnSalir) {
         });
     });
 }
+
+// 3. Logout automático por inactividad (30m)
+let tiempoinactividad;
+
+const resetearTemporizador = () => {
+    clearTimeout(tiempoinactividad);
+
+    const minutos = 30;
+    const milisegundos = minutos * 60 * 1000;
+
+    tiempoinactividad = setTimeout(() => {
+        cerrarSesionAutomatica();
+    }, milisegundos);
+};
+
+const cerrarSesionAutomatica = () => {
+    signOut(auth).then(() => {
+        alert("Tu sesión ha expirado por inactividad. Por favor, vuelva a iniciar sesión");
+        window.location.href = "login.html";
+    });
+};
+
+// Eventos de interacción del usuario
+window.onload = resetearTemporizador;
+window.onmousemove = resetearTemporizador;
+window.onkeydown = resetearTemporizador;
+window.onclick = resetearTemporizador;
+window.onscroll = resetearTemporizador;
