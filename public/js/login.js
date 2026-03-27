@@ -1,5 +1,8 @@
 import { auth } from './firebase-config.js';
 import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+import { inicializarFooter } from './utils.js';
+
+inicializarFooter();
 
 const form = document.querySelector('.form-login');
 

@@ -1,4 +1,36 @@
-// Obtener el modal
+// fecha actualizada footer
+
+    export const inicializarFooter = () => {
+        const footerP = document.querySelector('.footer p');
+        if (footerP) {
+            footerP.textContent = '© ' + new Date().getFullYear() + ' Fercave Asesores';
+        }
+    };
+
+
+// botón subir
+    export const inicializarBotonSubir = () => {
+        const btnSubir = document.getElementById("btn-subir");
+        if (!btnSubir) return;
+
+        // Escuchar el evento de scroll
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                btnSubir.classList.add("visible");
+            } else {
+                btnSubir.classList.remove("visible");
+            }
+        });
+
+        // Acción de subir al hacer clic
+        btnSubir.addEventListener("click", () => {
+            window.scrollTo({top: 0, behavior: "smooth"});
+        });
+
+    };
+
+// Obtener el modal de la infografía
+    export const inicializarModalInfografia = () => {
         var modal = document.getElementById("image-modal");
 
         // Obtener la imagen y su caption dentro del modal
@@ -31,9 +63,10 @@
             modal.style.display = "none";
         }
 
-        // EXTRA: También cerrar el modal si se pulsa la tecla 'Escape'
+        // Cerrar el modal si se pulsa la tecla 'Escape'
         document.addEventListener('keydown', function (event) {
             if (event.key === 'Escape' && modal.style.display === "block") {
                 modal.style.display = "none";
             }
         });
+    }

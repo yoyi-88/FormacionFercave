@@ -1,6 +1,6 @@
 import { db } from './firebase-config.js';
-
 import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+import { inicializarFooter, inicializarBotonSubir, inicializarModalInfografia } from './utils.js';
 
 
 document.addEventListener("DOMContentLoaded", async function () {
@@ -93,3 +93,7 @@ function mostrarError(mainContent, errorContent) {
     if (errorContent) errorContent.style.display = 'block';
     document.getElementById('page-title').innerText = "Curso no encontrado - Fercave Asesores";
 }
+
+inicializarBotonSubir();
+inicializarModalInfografia();
+inicializarFooter();

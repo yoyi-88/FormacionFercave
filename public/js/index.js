@@ -1,6 +1,7 @@
 import { db, auth } from './firebase-config.js';
 import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+import { inicializarFooter } from './utils.js';
 
 onAuthStateChanged(auth, async (user) => {
     if (user) {
@@ -60,3 +61,5 @@ onAuthStateChanged(auth, async (user) => {
         }
     }
 });
+
+inicializarFooter();
