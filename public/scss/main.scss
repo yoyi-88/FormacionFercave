@@ -18,3 +18,13 @@ body.privado {
 body.auth-ready {
     display: block;
 }
+
+.cargando {
+    grid-column: 1 / -1; // Se centra en el grid
+    text-align: center;
+    font-family: $tipografia;
+    color: $colorTexto;
+    padding: 50px;
+    // Aquí puedes añadir la animación de pulso que vimos antes
+    animation: pulse 1.5s infinite ease-in-out;
+}

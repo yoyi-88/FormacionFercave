@@ -462,4 +462,13 @@ body.privado {
 
 body.auth-ready {
   display: block;
+}
+
+.cargando {
+  grid-column: 1/-1;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333333;
+  padding: 50px;
+  animation: pulse 1.5s infinite ease-in-out;
 }/*# sourceMappingURL=main.css.map */
